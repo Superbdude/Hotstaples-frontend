@@ -1,0 +1,23 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+@theme inline {
+ --font-sans:"DM Sans",sans-serif;--font-display:"Italiana",serif;
+ --radius-sm:calc(var(--radius) - 2px);--radius-md:var(--radius);--radius-lg:calc(var(--radius) + 2px);--radius-xl:calc(var(--radius) + 4px);
+ --color-background:var(--background);--color-foreground:var(--foreground);--color-card:var(--card);--color-card-foreground:var(--card-foreground);--color-popover:var(--popover);--color-popover-foreground:var(--popover-foreground);--color-primary:var(--primary);--color-primary-foreground:var(--primary-foreground);--color-secondary:var(--secondary);--color-secondary-foreground:var(--secondary-foreground);--color-muted:var(--muted);--color-muted-foreground:var(--muted-foreground);--color-accent:var(--accent);--color-accent-foreground:var(--accent-foreground);--color-destructive:var(--destructive);--color-destructive-foreground:var(--destructive-foreground);--color-border:var(--border);--color-input:var(--input);--color-ring:var(--ring);--color-champagne:var(--champagne);--color-blush:var(--blush);--color-success:var(--success);--color-admin:var(--admin);
+}
+:root{--radius:.2rem;--background:oklch(.985 .008 80);--foreground:oklch(.235 .018 40);--card:oklch(.995 .004 80);--card-foreground:var(--foreground);--popover:var(--card);--popover-foreground:var(--foreground);--primary:oklch(.56 .075 28);--primary-foreground:oklch(.99 .005 80);--secondary:oklch(.945 .018 75);--secondary-foreground:var(--foreground);--muted:oklch(.955 .012 78);--muted-foreground:oklch(.5 .025 45);--accent:oklch(.91 .035 48);--accent-foreground:var(--foreground);--destructive:oklch(.55 .19 28);--destructive-foreground:oklch(.99 0 0);--border:oklch(.88 .025 72);--input:var(--border);--ring:var(--primary);--champagne:oklch(.72 .09 75);--blush:oklch(.94 .035 35);--success:oklch(.5 .1 145);--admin:oklch(.955 .01 72)}
+.dark{--background:oklch(.18 .012 35);--foreground:oklch(.96 .01 80);--card:oklch(.22 .012 35);--card-foreground:var(--foreground);--popover:var(--card);--popover-foreground:var(--foreground);--primary:oklch(.72 .07 30);--primary-foreground:oklch(.16 .01 35);--secondary:oklch(.27 .015 40);--secondary-foreground:var(--foreground);--muted:oklch(.25 .012 38);--muted-foreground:oklch(.72 .018 70);--accent:oklch(.34 .03 35);--accent-foreground:var(--foreground);--border:oklch(.32 .02 45);--input:var(--border);--ring:var(--primary)}
+@layer base{*{border-color:var(--border)}html{scroll-behavior:smooth}body{margin:0;background:var(--background);color:var(--foreground);font-family:var(--font-sans);letter-spacing:0}button,a,input,textarea,select{letter-spacing:0}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--ring);outline-offset:2px}h1,h2,h3{letter-spacing:0}h2{font-family:var(--font-display);font-size:clamp(2.25rem,5vw,4.25rem);line-height:1.05}::selection{background:var(--blush)}}
+@utility section{margin-inline:auto;max-width:1440px;padding:5rem 1.5rem;@media(min-width:640px){padding-inline:2.5rem}@media(min-width:1024px){padding:7rem 3rem}}
+@utility section-head{margin-bottom:2.5rem;display:flex;align-items:end;justify-content:space-between;gap:1rem}
+@utility eyebrow{font-size:.65rem;font-weight:600;letter-spacing:.2em;color:var(--muted-foreground)}
+@utility filter-title{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em}
+@utility footer-title{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--champagne)}
+@utility counter{position:absolute;right:-.05rem;top:0;display:grid;min-width:1rem;height:1rem;place-items:center;border-radius:999px;background:var(--primary);padding-inline:.2rem;font-size:.58rem;color:var(--primary-foreground)}
+@utility status-badge{display:inline-flex;border-radius:999px;background:var(--blush);padding:.25rem .6rem;font-size:.68rem;font-weight:600;color:var(--foreground)}
+@utility shadow-soft{box-shadow:0 14px 36px -24px color-mix(in oklab,var(--foreground) 24%,transparent)}
+@keyframes auth-drift{from{transform:scale(1.1) translate(0,0)}to{transform:scale(1.22) translate(-2.5%,2%)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
